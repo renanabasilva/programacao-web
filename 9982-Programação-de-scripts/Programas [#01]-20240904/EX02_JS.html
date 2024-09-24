@@ -1,0 +1,30 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<title>Exemplo 02</title> 
+		<style> 
+			h1 { color:green; } 
+			h2 { font-family: Impact; } 
+			body { text-align:center; } 
+		</style> 
+	</head> 
+	<body> 
+
+		<h1>Programação de scripts</h1> 
+		<h2>2º Exemplo </h2> 
+
+		<p>To view the message in the console press the F12 key on your keyboard.</p> 
+		<p>To count the number of occurrences, double click the button below.</p>
+        <br> 
+		<button ondblclick="mostra_na_consola()">Executar várias vezes...</button> 
+
+		<script> 
+			function mostra_na_consola() { 
+				for (i = 0; i < 10; i++) { 
+					console.count(); 
+				} 
+			} 
+		</script> 
+		
+	</body> 
+</html>

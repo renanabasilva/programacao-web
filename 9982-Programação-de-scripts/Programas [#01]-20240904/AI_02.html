@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos de document.write</title>
+</head>
+<body>
+    <h1>Exemplos de utilização de document.write</h1>
+
+    <h2>Exemplo 1: Texto simples</h2>
+    <script>
+        document.write("<p>Este é um exemplo simples de texto escrito com document.write.</p>");
+    </script>
+
+    <h2>Exemplo 2: HTML formatado</h2>
+    <script>
+        document.write("<h3>Este é um título</h3>");
+        document.write("<ul><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>");
+    </script>
+
+    <h2>Exemplo 3: Conteúdo dinâmico</h2>
+    <script>
+        var nome = "Maria";
+        var idade = 30;
+        document.write("<p>Olá, o meu nome é " + nome + " e tenho " + idade + " anos.</p>");
+        document.write("<p>Hoje é: " + new Date().toLocaleDateString('pt-PT') + "</p>");
+    </script>
+</body>
+</html>

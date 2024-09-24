@@ -1,0 +1,17 @@
+SELECT * FROM Pessoa WHERE Idade>=35;
+SELECT Idade, Nome, Salario FROM Pessoa WHERE Idade>=18;
+SELECT Mensagem FROM Mensagem WHERE Id_Msg <> 20;
+SELECT Id, Nome, Idade, Salario FROM Pessoa WHERE Idade >= 30 AND Idade <= 40;
+SELECT Id, Nome, Idade, Salario FROM Pessoa WHERE Idade BETWEEN 30 AND 40;
+SELECT Id, Nome, Idade, Salario FROM Pessoa WHERE Idade < 30 OR Idade > 40;
+SELECT Id, Nome, Idade, Salario FROM Pessoa WHERE NOT (Idade >= 30 AND Idade <= 40);
+SELECT Nome, Telefone FROM Pessoa;
+SELECT Nome FROM Pessoa WHERE Telefone IS NULL;
+SELECT Nome FROM Pessoa WHERE Telefone IS NOT NULL;
+SELECT * FROM Pessoa WHERE Idade <= 27 OR Idade >= 30 AND Telefone IS NULL ORDER BY Nome;
+SELECT * FROM Pessoa WHERE Idade <= 27 OR (Idade >= 30 AND Telefone IS NULL) ORDER BY IdASC;
+SELECT * FROM Pessoa WHERE Idade <= 27 OR (Idade >= 30 AND Telefone IS NULL) ORDER BY Id ASC;
+SELECT * FROM Mensagem WHERE Mensagem LIKE ‘T%’;
+SELECT * FROM Mensagem WHERE Mensagem LIKE “T%”;
+SELECT * FROM Mensagem WHERE Mensagem LIKE ‘T%’;
+SELECT Nome, Cod_Postal, Idade, Codigo, Localidade FROM Pessoa, Postal WHERE Cod_Postal = Codigo;

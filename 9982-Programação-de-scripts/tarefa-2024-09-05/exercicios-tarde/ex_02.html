@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      img {
+        width: 250px;
+        margin: 1px;
+      }
+    </style>
+    <title>Exercicio 02 - Mosaico</title>
+  </head>
+  <body>
+    <script>
+      var i = null;
+      var zeros = "";
+
+      for (i = 0; i < 40; i++) {
+        if (i < 10) {
+          zeros = "000";
+        } else {
+          if (i < 100) {
+            zeros = "00";
+          } else {
+            zeros = "0";
+          }
+        }
+        document.write('<img src="images/' + zeros + i + '.jpg" alt="">');
+      }
+    </script>
+  </body>
+</html>

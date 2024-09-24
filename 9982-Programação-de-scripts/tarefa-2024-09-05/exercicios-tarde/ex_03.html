@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 03 - MouseOver</title>
+    <style>
+      body {
+        margin: 2px;
+      }
+      #container img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body onload="mostraImagens()">
+    <div id="container">
+      <img
+        src="images/0000.jpg"
+        alt=""
+        id="imagem"
+        onmouseover="pausaImagem()"
+        onmouseout="pausaImagem()"
+      />
+    </div>
+  </body>
+  <script>
+    var imgLoc = 0;
+    var continua = 1;
+    const pausaImagem = () => {
+      if (continua == 1) {
+        continua = 0;
+      } else {
+        continua = 1;
+      }
+      mostraImagens();
+    };
+    const mostraImagens = () => {
+      if (continua == 1) {
+        imgLoc < 9 ? imgLoc++ : (imgLoc = 0);
+        document.getElementById("imagem").src =
+          "images/" + ("0000" + imgLoc).slice(-4) + ".jpg";
+        setTimeout("mostraImagens()", 1000);
+      }
+    };
+  </script>
+</html>

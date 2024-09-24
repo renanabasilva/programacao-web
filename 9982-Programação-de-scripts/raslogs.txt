@@ -1,0 +1,183 @@
+mysql> show tables;
++-----------------------+
+| Tables_in_rascomissao |
++-----------------------+
+| rascomissao           |
+| rasmensagem           |
+| raspessoa             |
+| raspostal             |
++-----------------------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT DISTINCT pessoa.*, postal.Localidade FROM pessoa, postal WHERE pessoa.Cod_Postal = postal.Codigo AND pessoa.telefone IS NULL;
+ERROR 1146 (42S02): Table 'rascomissao.pessoa' doesn't exist
+mysql> SELECT DISTINCT raspessoa.*, raspostal.Localidade FROM raspessoa, raspostal WHERE raspessoa.Cod_Postal = raspostal.Codigo AND raspessoa.telefone IS NULL;
++----+------------------+-------+-----------+----------+------------+------------+
+| Id | Nome             | Idade | Salario   | Telefone | Cod_Postal | Localidade |
++----+------------------+-------+-----------+----------+------------+------------+
+| 25 | Paulo Viegas     |    32 |  95000.00 | NULL     |       1500 | LISBOA     |
+| 32 | Florinda Simões |    35 | 147000.00 | NULL     |       4000 | PORTO      |
+| 37 | Isabel Espada    |    28 |  86000.00 | NULL     |       1100 | LISBOA     |
+| 49 | José António   |    17 | 210000.00 | NULL     |       1500 | LISBOA     |
++----+------------------+-------+-----------+----------+------------+------------+
+4 rows in set (0.03 sec)
+
+mysql> SELECT raspessoa.Nome, rascomissao.Valor FROM raspessoa, rascomissao WHERE raspessoa.Id = rascomissao.Id ORDER BY raspessoa.Nome, rascomissao.valor DESC;
++--------------------+-------+
+| Nome               | Valor |
++--------------------+-------+
+| António Dias      |   170 |
+| António Dias      |    20 |
+| Isabel Espada      | 14230 |
+| Isabel Espada      |  5500 |
+| Isabel Espada      |   120 |
+| Isabel Espada      |    20 |
+| José António     |  2300 |
+| Nascimento Augusto | 10500 |
+| Nascimento Augusto |  3750 |
+| Nascimento Augusto |  2600 |
+| Nascimento Augusto |   400 |
+| Paulo Viegas       |  2500 |
+| Paulo Viegas       |   370 |
++--------------------+-------+
+13 rows in set (0.02 sec)
+
+mysql> SELECT raspessoa.*, rascomissao.Valor FROM raspessoa, rascomissao WHERE raspessoa.Id = rascomissao.Id;
++----+--------------------+-------+-----------+----------+------------+-------+
+| Id | Nome               | Idade | Salario   | Telefone | Cod_Postal | Valor |
++----+--------------------+-------+-----------+----------+------------+-------+
+| 14 | Nascimento Augusto |    35 | 220000.00 | 456123   |       2300 | 10500 |
+| 14 | Nascimento Augusto |    35 | 220000.00 | 456123   |       2300 |  2600 |
+| 14 | Nascimento Augusto |    35 | 220000.00 | 456123   |       2300 |   400 |
+| 14 | Nascimento Augusto |    35 | 220000.00 | 456123   |       2300 |  3750 |
+| 25 | Paulo Viegas       |    32 |  95000.00 | NULL     |       1500 |  2500 |
+| 25 | Paulo Viegas       |    32 |  95000.00 | NULL     |       1500 |   370 |
+| 37 | Isabel Espada      |    28 |  86000.00 | NULL     |       1100 |  5500 |
+| 37 | Isabel Espada      |    28 |  86000.00 | NULL     |       1100 | 14230 |
+| 37 | Isabel Espada      |    28 |  86000.00 | NULL     |       1100 |    20 |
+| 37 | Isabel Espada      |    28 |  86000.00 | NULL     |       1100 |   120 |
+| 42 | António Dias      |    43 |  74000.00 | 789654   |       1500 |    20 |
+| 42 | António Dias      |    43 |  74000.00 | 789654   |       1500 |   170 |
+| 49 | José António     |    17 | 210000.00 | NULL     |       1500 |  2300 |
++----+--------------------+-------+-----------+----------+------------+-------+
+13 rows in set (0.00 sec)
+
+mysql> SELECT p.nome, p.id, rascomissao.valor, rasmensagem.Mensagem FROM raspessoa p, rascomissao, rasmensagem WHERE p.id = rascomissao.id AND rascomissao.id_msg = rasmensagem.id_msg ORDER BY p.nome ASC;
+ERROR 1054 (42S22): Unknown column 'rasmensagem.Mensagem' in 'field list'
+mysql> SELECT p.nome, p.id, rascomissao.valor, mensagem.Mensagem FROM raspessoa p, rascomissao, rasmensagem WHERE p.id = rascomissao.id AND rascomissao.id_msg = rasmensagem.id_msg ORDER BY p.nome ASC;
+ERROR 1054 (42S22): Unknown column 'mensagem.Mensagem' in 'field list'
+mysql> SELECT raspessoa.nome, raspessoa.id, rascomissao.valor, rasmensagem.Mensagem FROM raspessoa, rascomissao, rasmensagem WHERE raspessoa.id = rascomissao.id AND rascomissao.id_msg = rasmensagem.id_msg ORDER BY raspessoa.nome ASC;
+ERROR 1054 (42S22): Unknown column 'rasmensagem.Mensagem' in 'field list'
+mysql> show table
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> show tables;
++-----------------------+
+| Tables_in_rascomissao |
++-----------------------+
+| rascomissao           |
+| rasmensagem           |
+| raspessoa             |
+| raspostal             |
++-----------------------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT raspessoa.nome, raspessoa.id, rascomissao.valor, rasmensagem.rasMensagem FROM raspessoa, rascomissao, rasmensagem WHERE raspessoa.id = rascomissao.id AND rascomissao.id_msg = rasmensagem.id_msg ORDER BY raspessoa.nome ASC;
++--------------------+----+-------+---------------------+
+| nome               | id | valor | rasMensagem         |
++--------------------+----+-------+---------------------+
+| António Dias      | 42 |    20 | Fretes Individuais  |
+| António Dias      | 42 |   170 | Fretes Empresas     |
+| Isabel Espada      | 37 |  5500 | Comissão de Vendas |
+| Isabel Espada      | 37 | 14230 | Fretes Empresas     |
+| Isabel Espada      | 37 |    20 | Vendas Extra        |
+| Isabel Espada      | 37 |   120 | Deslocações       |
+| José António     | 49 |  2300 | Fretes Individuais  |
+| Nascimento Augusto | 14 | 10500 | Comissão de Vendas |
+| Nascimento Augusto | 14 |  2600 | Refeições         |
+| Nascimento Augusto | 14 |   400 | Combustíveis       |
+| Nascimento Augusto | 14 |  3750 | Ofertas             |
+| Paulo Viegas       | 25 |  2500 | Comissão de Vendas |
+| Paulo Viegas       | 25 |   370 | Fretes Empresas     |
++--------------------+----+-------+---------------------+
+13 rows in set (0.00 sec)
+
+mysql> SELECT raspessoa.nome, rascomissao.valor, rasmensagem.rasMensagem FROM raspessoa, rascomissao, rasmensagem WHERE raspessoa.id = rascomissao.id AND rascomissao.id_msg = rasmensagem.id_msg ORDER BY raspessoa.nome ASC;
++--------------------+-------+---------------------+
+| nome               | valor | rasMensagem         |
++--------------------+-------+---------------------+
+| António Dias      |    20 | Fretes Individuais  |
+| António Dias      |   170 | Fretes Empresas     |
+| Isabel Espada      |  5500 | Comissão de Vendas |
+| Isabel Espada      | 14230 | Fretes Empresas     |
+| Isabel Espada      |    20 | Vendas Extra        |
+| Isabel Espada      |   120 | Deslocações       |
+| José António     |  2300 | Fretes Individuais  |
+| Nascimento Augusto | 10500 | Comissão de Vendas |
+| Nascimento Augusto |  2600 | Refeições         |
+| Nascimento Augusto |   400 | Combustíveis       |
+| Nascimento Augusto |  3750 | Ofertas             |
+| Paulo Viegas       |  2500 | Comissão de Vendas |
+| Paulo Viegas       |   370 | Fretes Empresas     |
++--------------------+-------+---------------------+
+13 rows in set (0.00 sec)
+
+mysql> SELECT * FROM raspessoa WHERE Idade>=18;
++----+--------------------+-------+-----------+----------+------------+
+| Id | Nome               | Idade | Salario   | Telefone | Cod_Postal |
++----+--------------------+-------+-----------+----------+------------+
+|  5 | Célia Morais      |    26 | 170000.00 | 123456   |       1100 |
+| 14 | Nascimento Augusto |    35 | 220000.00 | 456123   |       2300 |
+| 25 | Paulo Viegas       |    32 |  95000.00 | NULL     |       1500 |
+| 32 | Florinda Simões   |    35 | 147000.00 | NULL     |       4000 |
+| 37 | Isabel Espada      |    28 |  86000.00 | NULL     |       1100 |
+| 42 | António Dias      |    43 |  74000.00 | 789654   |       1500 |
++----+--------------------+-------+-----------+----------+------------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT id, nome, telefone FROM rasPessoa WHERE Telefone IS NULL;
++----+------------------+----------+
+| id | nome             | telefone |
++----+------------------+----------+
+| 25 | Paulo Viegas     | NULL     |
+| 32 | Florinda Simões | NULL     |
+| 37 | Isabel Espada    | NULL     |
+| 49 | José António   | NULL     |
++----+------------------+----------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT id, nome, telefone FROM raspessoa WHERE telefone IS NOT NULL;
++----+--------------------+----------+
+| id | nome               | telefone |
++----+--------------------+----------+
+|  5 | Célia Morais      | 123456   |
+| 14 | Nascimento Augusto | 456123   |
+| 42 | António Dias      | 789654   |
++----+--------------------+----------+
+3 rows in set (0.01 sec)
+
+mysql> show tables;
++-----------------------+
+| Tables_in_rascomissao |
++-----------------------+
+| rascomissao           |
+| rasmensagem           |
+| raspessoa             |
+| raspostal             |
++-----------------------+
+4 rows in set (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| rascomissao        |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+7 rows in set (0.00 sec)
+

@@ -1,0 +1,103 @@
+git status
+git log
+
+---
+
+git add .
+
+  Um commit acaba de ser preparado. O índice do Git é uma área de preparo para commits. É uma lista de todas as versões de arquivo que farão parte do próximo commit a ser feito.
+
+  Em vez de usar git add ., você poderia ter usado git add index.html, pois index.html era o único arquivo novo no diretório. Mas se vários arquivos tivessem sido adicionados, git add . serviria para todos eles.
+
+---
+
+git commit index.html -m "Create an empty index.html file"
+
+  O sinalizador -m deste comando informa o Git de que você está fornecendo uma mensagem de commit.
+
+  Há muitas maneiras diferentes de formular mensagens de commit, mas uma boa diretriz é escrever a primeira linha para que ela indique o que o commit faz na árvore. Também é comum colocar a primeira letra em maiúscula e não usar o ponto final para economizar espaço. Imagine que a primeira linha da mensagem complete a frase que começa com "Quando enviado por push, esse commit fará..."
+
+  Uma mensagem de commit pode ter várias linhas. A primeira linha não deve ter mais de 50 caracteres e deve ser seguida por uma linha em branco. As linhas seguintes não devem ter mais de 72 caracteres. Esses requisitos não são rígidos e remontam à época de cartões de pontos e terminais não inteligentes, mas, de fato, aprimoram a saída git log.
+
+---
+
+git commit -a -m "Add a heading to index.html"
+
+  Observe que não executamos o comando git add desta vez para preparar as alterações. Em vez disso, usamos o sinalizador -a no comando git commit. A opção -a adiciona todos os arquivos que você modificou desde o último commit. Ela não adicionará novos arquivos. Para adicionar novos arquivos, você ainda precisará do comando git add.
+
+---
+
+git diff
+
+  O formato de saída é o mesmo do comando diff do UNIX, e o comando do Git usa muitas das mesmas opções. Um sinal de adição é exibido na frente das linhas que foram adicionadas e um sinal de subtração indica as linhas que foram excluídas.
+
+  O padrão é que git diff compare a árvore de trabalho com o índice. Em outras palavras, ele mostra todas as alterações que ainda não foram preparadas (adicionadas ao índice do Git). Para comparar a árvore de trabalho com o último commit, use git diff HEAD.
+
+  Se o comando não retornar ao prompt após a execução, insira q para sair da exibição de comparação.
+
+---
+
+git commit -m "Add HTML boilerplate to index.html" index.html
+
+  Em seguida, faça commit da alteração. Em vez de usar o sinalizador -a, você poderá nomear explicitamente um arquivo a ser preparado e confirmado se o Git já tiver o arquivo no índice (o comando commit procura apenas a existência de um arquivo).
+
+---
+
+git add -A
+git commit -m "Make small wording change; ignore editor backups"
+
+  Esse exemplo usa a opção -A com git add para adicionar todos os arquivos sem controle de alterações (e não ignorados) e os arquivos que foram alterados aos que já estão sob o controle do Git.
+
+---
+
+git log --oneline
+git log -nX
+
+  Você poderá ver por que, quando há centenas (ou milhares) de commits em um projeto, a opção --oneline pode ser sua melhor amiga. Outra opção útil é -nX, em que X é um número de commit: 1 para o último commit, 2 para o anterior a esse etc. Para ver isso por conta própria, experimente usar um comando git log -n2.
+
+---
+
+git commit --amend --no-edit
+
+  A opção --amend de git commit permite que você altere o histórico (e com que frequência uma pessoa tem a chance de alterar o histórico?). A opção --no-edit instrui o Git a fazer a alteração sem alterar a mensagem de commit. Use também --amend para editar uma mensagem de commit, adicionar arquivos acidentalmente deixados fora do commit ou remover arquivos que foram adicionados por engano.
+
+---
+
+git checkout 
+
+ tem vários usos, mas no próximo exercício, vamos usá-lo para recuperar um arquivo excluído. git checkout atualiza os arquivos na árvore de trabalho para que correspondam à versão no índice ou na árvore especificada.
+
+git checkout -- <file_name>
+
+  Você também pode fazer check-out de um arquivo de um commit anterior (normalmente, o principal de outro branch), mas o padrão é obter o arquivo do índice. O -- na lista de argumentos serve para separar o commit da lista de caminhos de arquivos. Isso não é estritamente necessário nesse caso, mas se você tiver um branch chamado <> (talvez porque esse é o nome do arquivo que está sendo trabalhado nesse branch), -- impedirá que o Git fique confuso.
+
+  Posteriormente, você aprenderá também a usar checkout para alternar os branches.
+
+---
+
+ git rm
+
+  Esse comando exclui o arquivo em disco e faz com que o Git registre a exclusão do arquivo no índice.
+
+  git rm index.html
+  git reset HEAD index.html
+  git checkout -- index.html
+
+---
+
+Reverter um commit: git revert
+
+O último comando importante a ser conhecido para corrigir erros com o Git é git revert. git checkout só funciona em situações em que as alterações a serem desfeitas estão no índice. Depois de fazer commit das alterações, você precisará usar outra estratégia para desfazê-las. Nesse caso, podemos usar git revert para reverter o commit anterior. Ele funciona fazendo outro commit que cancela o primeiro.
+
+Podemos usar git revert HEAD para fazer um commit exatamente oposto ao último commit, desfazendo o commit anterior, mas deixando todo o histórico intacto. A parte HEAD do comando apenas informa o Git de que só queremos "desfazer" o último commit.
+
+Além disso, você pode remover o commit mais recente usando o comando git reset:
+
+  git reset --hard HEAD^
+
+O Git oferece vários tipos de redefinições. O padrão é --mixed, que redefine o índice, mas não a árvore de trabalho; também moverá HEAD se você especificar outro commit. A opção --soft só move HEAD e mantém o índice e a árvore de trabalho inalterados. Essa opção mantém todas as alterações como "alterações a serem confirmadas", como indicado em git status. Uma redefinição --hard altera o índice e a árvore de trabalho para que correspondam ao commit especificado. As alterações feitas nos arquivos com controle de alterações são descartadas.
+
+---
+
+git revert --no-edit HEAD
+

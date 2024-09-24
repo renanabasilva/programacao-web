@@ -1,0 +1,14 @@
+.slideshow-container {
+  position: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.slide {
+  display: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,37 @@
+ID,Nome,Data inicial,Data final,Duração,Concluído,Custo,Prioridade,Coordenador,Predecessoras,Índice,Recursos,Assignments,Nova tarefa,Notas,Link para a web
+0,Inicio,11/09/2024,12/09/2024,2,0,0,1,,,1,,,"#000000",,
+1,"  Telefonema",11/09/2024,11/09/2024,1,0,0,1,,,1.1,,,,,
+2,"  Reunião Online",12/09/2024,12/09/2024,1,0,0,1,,1,1.2,,,,,
+3,Estudo de mercado,13/09/2024,13/09/2024,1,0,0.0,1,,,2,,,"#000000",,
+4,"  Análise de concorrência",13/09/2024,13/09/2024,1,0,0.0,1,,,2.1,José Silva,2:100.00,,,
+5,"  Pontos Fortes e Fracos (SWOT)",13/09/2024,13/09/2024,1,0,0.0,1,,,2.2,José Silva,2:100.00,,,
+6,Wireframe,16/09/2024,16/09/2024,1,0,0,1,,,3,,,"#000000",,
+7,"  Estrutura Baixa Qualidade",16/09/2024,16/09/2024,1,0,0,1,,,3.1,,,,,
+8,Prototipagem,17/09/2024,19/09/2024,3,0,0.0,1,,,4,,,"#000000",,
+9,"  Mockup - sem animações",17/09/2024,17/09/2024,1,0,0.0,1,,,4.1,Ana Silva,1:100.00,,,
+10,"  Mockup - com animações",18/09/2024,18/09/2024,1,0,0.0,1,,9,4.2,Ana Silva,1:100.00,,,
+11,"  Design",19/09/2024,19/09/2024,1,0,0.0,1,,,4.3,Ana Silva,1:100.00,"#000000",,
+12,"    Cores",19/09/2024,19/09/2024,1,0,0.0,1,,,4.3.1,Ana Silva,1:100.00,,,
+13,"    Estilos",19/09/2024,19/09/2024,1,0,0.0,1,,,4.3.2,Ana Silva,1:100.00,,,
+14,"    Imagens e fotografias",19/09/2024,19/09/2024,1,0,0,1,,,4.3.3,,,,,
+15,Reunião Cliente,20/09/2024,20/09/2024,1,0,0.0,1,,11,5,,,"#000000",,
+16,"  Reunião online",20/09/2024,20/09/2024,1,0,0.0,1,,,5.1,José Silva,2:100.00,,,
+17,Construção/Desenvolvimento,23/09/2024,25/09/2024,3,0,0.0,1,,,6,,,"#000000",,
+18,"  Front Office",23/09/2024,24/09/2024,2,0,0.0,1,,,6.1,,,"#000000",,
+19,"    HTML + CSS",23/09/2024,24/09/2024,2,0,0.0,1,,,6.1.1,Renan Silva,0:100.00,,,
+20,"    Javascript",23/09/2024,24/09/2024,2,0,0.0,1,,,6.1.2,Renan Silva,0:100.00,,,
+21,"  Back Office",24/09/2024,25/09/2024,2,0,0.0,1,,,6.2,,,"#000000",,
+22,"    PHP/Base de Dados",24/09/2024,25/09/2024,2,0,0.0,1,,,6.2.1,Renan Silva,0:100.00,,,
+23,Teste de Usabilidade,26/09/2024,27/09/2024,2,0,0,1,,,7,,,"#000000",,
+24,"  Montar o teste (user testing)",26/09/2024,26/09/2024,1,0,0,1,,,7.1,,,,,
+25,"  Realizar o teste (user testing)",27/09/2024,27/09/2024,1,0,0,1,,24,7.2,,,,,
+26,Documentação,30/09/2024,30/09/2024,1,0,0,1,,,8,,,"#000000",,
+27,"  Produzir o relatório final",30/09/2024,30/09/2024,1,0,0,1,,,8.1,,,,,
+28,Reunião Cliente,01/10/2024,01/10/2024,1,0,0,1,,,9,,,"#000000",,
+29,"  Reunião presencial",01/10/2024,01/10/2024,1,0,0,1,,,9.1,,,,,
+
+
+ID,Nome,Função,E-mail,Telefone,Taxa normal,Custo total,Carga total
+0,Renan Silva,Programador Classe 01,,,0,0,6.0
+1,Ana Silva,Designer,,,0,0,5.0
+2,José Silva,Gestor de Projetos,,,0,0,3.0

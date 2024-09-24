@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulação de Estilos com JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        #caixa {
+            width: 200px;
+            height: 200px;
+            background-color: #3498db;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        button {
+            margin-right: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manipulação de Estilos com JavaScript</h1>
+    
+    <div id="caixa">Caixa de Exemplo</div>
+    
+    <button onclick="mudarCor()">Mudar Cor</button>
+    <button onclick="mudarTamanho()">Mudar Tamanho</button>
+    <button onclick="adicionarBorda()">Adicionar/Remover Borda</button>
+    <button onclick="alternarVisibilidade()">Alternar Visibilidade</button>
+
+    <script>
+        function mudarCor() {
+            const caixa = document.getElementById('caixa');
+            caixa.style.backgroundColor = getRandomColor();
+        }
+
+        function mudarTamanho() {
+            const caixa = document.getElementById('caixa');
+            const novaLargura = Math.floor(Math.random() * 300) + 100;
+            const novaAltura = Math.floor(Math.random() * 300) + 100;
+            caixa.style.width = novaLargura + 'px';
+            caixa.style.height = novaAltura + 'px';
+        }
+
+        function adicionarBorda() {
+            const caixa = document.getElementById('caixa');
+            if (caixa.style.border) {
+                caixa.style.border = '';
+            } else {
+                caixa.style.border = '5px solid black';
+            }
+        }
+
+        function alternarVisibilidade() {
+            const caixa = document.getElementById('caixa');
+            if (caixa.style.display === 'none') {
+                caixa.style.display = 'flex';
+            } else {
+                caixa.style.display = 'none';
+            }
+        }
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>
