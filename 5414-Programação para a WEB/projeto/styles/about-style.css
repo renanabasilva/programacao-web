@@ -1,0 +1,65 @@
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #333;
+  width: 940px;
+  margin: 0 auto;
+}
+
+h1 {
+  background-image: url(../images/sobre-background.jpg);
+  padding: 10px;
+}
+
+h2 {
+  border-bottom: 2px solid #333;
+  margin-top: 30px;
+}
+
+figure {
+  background-color: #f2eded;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+figcaption {
+  font-style: italic;
+  margin-top: 10px;
+}
+
+p {
+  padding: 0 45px;
+  text-indent: 15px;
+}
+
+#centro-distribuicao {
+  width: 550px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+#familia-pelho {
+  margin: 0 0 10px 10px;
+  padding: 15px;
+  float: right;
+}
+
+#rodape {
+  color: #777;
+  margin: 30px 0;
+  padding: 30px 0;
+}
+
+#rodape img {
+  margin-right: 30px;
+  vertical-align: middle;
+  width: 94px;
+}
+
+/* p {
+  text-align: right;
+  line-height: 3px;
+  letter-spacing: 3px;
+  word-spacing: 5px;
+  text-indent: 30px;
+} */
