@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apresentação</title>
+    <style>
+
+      /* CSS RESET */
+      /* ----------------------------- */
+      html, body, div, span, applet, object, iframe,
+      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+      a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, img, ins, kbd, q, s, samp,
+      small, strike, strong, sub, sup, tt, var,
+      b, u, i, center,
+      dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td,
+      article, aside, canvas, details, embed, 
+      figure, figcaption, footer, header, hgroup, 
+      menu, nav, output, ruby, section, summary,
+      time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      /* HTML5 display-role reset for older browsers */
+      article, aside, details, figcaption, figure, 
+      footer, header, hgroup, menu, nav, section {
+        display: block;
+      }
+      body {
+        line-height: 1;
+      }
+      ol, ul {
+        list-style: none;
+      }
+      blockquote, q {
+        quotes: none;
+      }
+      blockquote:before, blockquote:after,
+      q:before, q:after {
+        content: '';
+        content: none;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+
+      /* Styles */
+      /* ------------------------------------- */
+
+      html, body {
+        height: 100vh;
+        box-sizing: border-box;
+        scroll-behavior: smooth !important;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+        width: 100%;
+        background-color: #000;
+        color: #fff;
+        /* background-image: linear-gradient(to bottom left, #8966cc, #577ca5 50%, #5daac2 75%); */
+      }
+
+      h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        margin: 50px auto;
+      }
+
+      li, a {
+        display: inline;
+        text-decoration: none;
+        font-size: 1.3rem;
+        color: #fff;
+        margin: 0 10px;
+      }
+
+      a:hover {
+        color: #8f8f8f;
+      }
+
+      main {
+        width: 100%;
+      }
+
+      .titulo {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-shadow: 0px 0px 4px #c9c9c9;
+        height: 300px;
+        width: 100%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 10vh 0px;
+        box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.418);
+      }
+
+      .apresentacao {
+        background-image: url("imagens/agua.jpg");
+        background-position: center center;
+      }
+
+      .educacao {
+        background-image: url("imagens/livros.jpg");
+        background-position: center center;
+      }
+
+      .hobbies {
+        background-image: url("imagens/f1.jpg");
+        background-position: center center;
+      }
+
+      .experiencia {
+        background-image: url("imagens/work.jpg");
+        background-position: center center;
+      }
+
+      .content {
+        width: 950px;  
+        margin: 100px auto;
+      }
+
+      .content > p {
+        font-size: 2rem;
+      }
+
+      footer {
+        width: 100%;
+        height: 100px;
+        background-color: #000;
+        color: #fff;
+        font-size: 1.3rem;
+      }
+
+      footer a {
+        color: #fff;
+      }
+      footer a:hover {
+        color: #aaa;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">    
+      <header>
+        <h1>Renan Aba da Silva</h1>
+        <nav>
+          <ul>
+            <li><a href="#apresentacao">Apresentação</a></li>
+            <li><a href="#educacao">Educação</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#experiencia">Experiência</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section id="apresentacao" class="container">
+          <div class="container titulo apresentacao"><h2>Apresentação</h2></div>
+          <div class="content">
+            <p>
+              "Olá, meu nome é Renan Aba, tenho 32 anos, natural de São Paulo,
+              Brasil. Sou uma pessoa curiosa e apaixonada por aprender, sempre em
+              busca de novos desafios que possam contribuir para o meu crescimento
+              pessoal e profissional. Acredito que a dedicação e a perseverança são
+              essenciais para alcançar nossos objetivos."
+            </p>
+          </div>
+        </section>
+        <section id="educacao" class="container">
+          <div class="container titulo educacao"><h2>Educação</h2></div>
+          <div class="content">
+            <p>
+              "Minha trajetória educacional começou em uma escola estadual, onde
+              estudei o ensino fundamental e médio. Durante o ensino médio, também
+              fiz um curso técnico de Planejamento e Controle de Produção na Federal
+              de São Paulo, além de um curso de Administração de Pequenas Empresas
+              na Etec. Após concluir esses cursos, optei por aprofundar meus
+              conhecimentos no curso técnico de Mecatrônica na Etec Martin Luther
+              King. Depois, decidi seguir a carreira de engenharia, cursando
+              Engenharia Mecânica na Universidade São Judas Tadeu. Durante esse
+              período, tive a oportunidade de estagiar na própria universidade, onde
+              participei da equipe do Baja, adquirindo experiência prática e
+              aplicando os conceitos aprendidos. Mais recentemente, me mudei para
+              Portugal com intuido de iniciar o mestrado em Engenharia Eletrónica e
+              de Computadores, mas, ao refletir sobre minha trajetória, decidi
+              redirecionar meus estudos para a área de programação, onde estou
+              focado atualmente."
+            </p>
+          </div>
+        </section>
+        <section id="hobbies" class="container">
+          <div class="container titulo hobbies"><h2>Hobbies</h2></div>
+          <div class="content">            
+            <p>
+              "Nos meus momentos de lazer, gosto de fazer diversas coisas, como
+              assistir filmes, ir ao ginásio e ler. Um dos meus hobbies favoritos é
+              acompanhar a formula 1 e correr de kart tanto fisico como
+              virtualmente. Também sou apaixonado por jogar video games, o que me
+              permite explorar minha criatividade e manter a mente ativa. Acredito
+              que hobbies são essenciais para equilibrar a vida profissional e
+              pessoal."
+            </p>
+          </div>
+        </section>
+        <section id="experiencia" class="container">
+          <div class="container titulo experiencia"><h2>Experiência</h2></div>
+          <div class="content">
+            <p>
+              "Minha experiência profissional inclui trabalhar com vendas e
+              engenharia. Trabalhei na Imafix, onde atuei como Analista de métodos e
+              processos. Durante esse período, desenvolvi habilidades como gestão da
+              qualidade e participei de projetos que envolveram contato com clientes
+              e fornecedores. Esse trabalho me proporcionou um grande aprendizado e
+              reforçou minha capacidade de trabalhar em equipe e lidar com desafios
+              de forma proativa. Também busco constantemente aprimorar minhas
+              habilidades em programação para continuar evoluindo na minha transição
+              de carreira para web developer."
+            </p>
+          </div>
+        </section>
+      </main>
+      <footer class="container">
+        <p>Site desenvolvido por<a href="https://github.com/renanabasilva" target="_blank">Renan Aba</a></p>
+      </footer>
+  </div>
+  </body>
+</html>
