@@ -2,6 +2,11 @@ body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: #333;
+  
+  margin: 0 auto;
+}
+
+.container {
   width: 940px;
   margin: 0 auto;
 }
@@ -9,6 +14,10 @@ body {
 h1 {
   background-image: url(../images/sobre-background.jpg);
   padding: 10px;
+}
+
+article {
+  width: 940px;
 }
 
 h2 {
@@ -32,6 +41,24 @@ p {
   text-indent: 15px;
 }
 
+p::first-letter{
+  font-weight: bold;
+}
+
+section p:first-of-type::first-line {
+  font-variant: small-caps;
+}
+
+/* h1 + p::first-line,
+h2 + p::first-line,
+figure + p::first-line {
+  font-variant: small-caps;
+} */
+
+h1 + p {
+  text-indent: 0;
+}
+
 #centro-distribuicao {
   width: 550px;
   margin: 0 auto;
@@ -44,18 +71,6 @@ p {
   float: right;
 }
 
-#rodape {
-  color: #777;
-  margin: 30px 0;
-  padding: 30px 0;
-}
-
-#rodape img {
-  margin-right: 30px;
-  vertical-align: middle;
-  width: 94px;
-}
-
 /* p {
   text-align: right;
   line-height: 3px;
@@ -63,3 +78,51 @@ p {
   word-spacing: 5px;
   text-indent: 30px;
 } */
+
+#lista-diferenciais li {
+  list-style: disc;
+}
+
+footer {
+  background-image: url(../images/fundo-rodape.png);
+  clear: both;
+  padding: 20px 0;
+  color: #fff;
+}
+
+footer .container, 
+.social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social {
+  padding: 0;
+}
+
+.social a {
+  /* tamanho da imagem */
+  width: 32px;
+  height: 32px;
+  /* image replacement */
+  display: block;
+  text-indent: -9999px;
+}
+
+.social a[href*="facebook.com"] {
+  background-image: url(../images/facebook.png);
+}
+
+.social a[href*="x.com"] {
+  background-image: url(../images/twitter.png);
+}
+
+.social a[href*="plus.google.com"] {
+  background-image: url(../images/googleplus.png);
+}
+
+.social li {
+  float: left;
+  margin: auto 12px;
+}
