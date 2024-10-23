@@ -1,0 +1,186 @@
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #333;
+  
+  margin: 0 auto;
+}
+
+.container {
+  width: 940px;
+  margin: 0 auto;
+}
+
+h1 {
+  background-image: url(../images/sobre-background.jpg);
+  padding: 10px;
+}
+
+article {
+  width: 940px;
+}
+
+h2 {
+  border-bottom: 2px solid #333;
+  margin-top: 30px;
+}
+
+figure {
+  background-color: #f2eded;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+figcaption {
+  font-style: italic;
+  margin-top: 10px;
+}
+
+p {
+  padding: 0 45px;
+  text-indent: 15px;
+}
+
+p::first-letter{
+  font-weight: bold;
+}
+
+section p:first-of-type::first-line {
+  font-variant: small-caps;
+}
+
+/* h1 + p::first-line,
+h2 + p::first-line,
+figure + p::first-line {
+  font-variant: small-caps;
+} */
+
+h1 + p {
+  text-indent: 0;
+}
+
+#centro-distribuicao {
+  width: 550px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+#familia-pelho {
+  margin: 0 0 10px 10px;
+  padding: 15px;
+  float: right;
+}
+
+/* p {
+  text-align: right;
+  line-height: 3px;
+  letter-spacing: 3px;
+  word-spacing: 5px;
+  text-indent: 30px;
+} */
+
+#lista-diferenciais li {
+  list-style: disc;
+}
+
+footer {
+  background-image: url(../images/fundo-rodape.png);
+  clear: both;
+  padding: 20px 0;
+  color: #fff;
+}
+
+footer .container, 
+.social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social {
+  padding: 0;
+}
+
+.social a {
+  /* tamanho da imagem */
+  width: 32px;
+  height: 32px;
+  /* image replacement */
+  display: block;
+  text-indent: -9999px;
+}
+
+.social a[href*="facebook.com"] {
+  background-image: url(../images/facebook.png);
+}
+
+.social a[href*="x.com"] {
+  background-image: url(../images/twitter.png);
+}
+
+.social a[href*="plus.google.com"] {
+  background-image: url(../images/googleplus.png);
+}
+
+.social li {
+  float: left;
+  margin: auto 12px;
+}
+
+/* ---- Mobile section ---- */
+@media (max-width: 767px) {
+  .container {
+    width: 96%;
+    margin: 0px auto;
+  }
+  
+  p {
+    padding: 0 25px;
+  }
+
+  #centro-distribuicao {
+    width: fit-content;
+  }  
+
+  #centro-distribuicao img {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  #familia-pelho {
+    max-width: max-content;
+    margin: 20px auto;
+    float: none;
+  }
+
+  #familia-pelho img{
+    width: 100%;
+  }
+
+  #lista-diferenciais {
+    padding: 0 45px;
+  }
+
+  footer .container{
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .container {
+    width: 96%;
+    margin: 0px auto;
+  }
+
+  section {
+    margin: 0 30px;
+  }
+
+  #familia-pelho {
+    margin: 0 30px 10px 10px;
+  }
+
+  footer .container{
+    justify-content: space-around;
+  }
+}
