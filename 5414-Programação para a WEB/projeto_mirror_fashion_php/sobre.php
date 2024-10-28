@@ -1,7 +1,7 @@
 <?php
-	$cabecalho_title = "Sobre a Mirror Fashion";
-	$cabecalho_css = '<link rel="stylesheet" href="css/sobre.css">';
-	include("cabecalho.php");
+$cabecalho_title = "Sobre a Mirror Fashion";
+$cabecalho_css = '<link rel="stylesheet" href="css/sobre.css">';
+include("cabecalho.php");
 ?>
 <article class="container">
 	<section>
@@ -85,6 +85,3 @@
 	</section>
 </article>
 <?php include("rodape.php"); ?>
-</body>
-
-</html>
