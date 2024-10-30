@@ -5,15 +5,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Checkout Mirror Fashion</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="css/bootstrap_flatly.min.css">
   <style>
+    body {
+      padding-top: 60px;
+    }
+
     .form-control:invalid {
       border: 1px solid #c00;
+    }
+
+    .navbar {
+      margin: 0;
+    }
+
+    .navbar .glyphicon {
+      color: lightgreen;
     }
   </style>
 </head>
 
 <body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.php">
+        <img src="img/logo-rodape.png" alt="Mirror Fashion" style="width: 60%;">
+      </a>
+      <button class="navbar-toggle" type="button" data-target=".navbar-collapse" data-toggle="collapse">
+        <span class="glyphicon glyphicon-align-justify"></span>
+      </button>
+    </div>
+    <ul class="nav navbar-nav collapse navbar-collapse">
+      <li><a href="sobre.php"><span class="glyphicon glyphicon-home"></span> Sobre</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Ajuda</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-list-alt"></span> Perguntas frequentes</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-bullhorn"></span> Entre em contacto</a></li>
+    </ul>
+  </nav>
+
   <div class="jumbotron">
     <div class="container">
       <h1>Ótima escolha!</h1>
@@ -110,6 +140,9 @@
       }
     }
   </script>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 </body>
 
 </html>
