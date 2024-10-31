@@ -66,12 +66,22 @@
               <dt>Produto</dt>
               <dd><?= $_POST['nome'] ?></dd>
               <dt>Preço</dt>
-              <dd><?= $_POST['preco'] ?></dd>
+              <dd id="preco"><?= $_POST['preco'] ?></dd>
               <dt>Cor</dt>
               <dd><?= $_POST['cor'] ?></dd>
               <dt>Tamanho</dt>
               <dd><?= $_POST['tamanho'] ?></dd>
             </dl>
+            <div class="form-group">
+              <label for="qt">Quantidade</label>
+              <input type="number" id="qt" class="form-control" min="0" max="99" value="1">
+            </div>
+            <div class="form-group">
+              <label for="total">Total</label>
+              <output for="qt valor" id="total" class="form-control">
+                <?= $_POST['preco'] ?>
+              </output>
+            </div>
           </div> <!-- fim .panel-body -->
         </div> <!-- fim .panel -->
       </div>
@@ -143,6 +153,8 @@
 
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  <script src="js/converteMoeda.js"></script>
+  <script src="js/total.js"></script>
 </body>
 
 </html>

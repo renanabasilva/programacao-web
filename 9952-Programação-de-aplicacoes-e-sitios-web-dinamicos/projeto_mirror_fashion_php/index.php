@@ -32,6 +32,7 @@ include("cabecalho.php");
 			</ul>
 		</nav>
 	</section><!-- fim .menu-departamentos -->
+	<a href="#" class="pause"></a>
 	<img src="img/destaque-home.png" alt="Promoção: Big City Night">
 </div><!-- fim .container .destaque -->
 <div class="container paineis">
@@ -145,4 +146,5 @@ include("cabecalho.php");
 		</ol>
 	</section>
 </div>
+<script src="js/banner.js"></script>
 <?php include("rodape.php"); ?>
