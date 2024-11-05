@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/estilos.css">
 	<?php print @$cabecalho_css; ?>
 	<link rel="stylesheet" href="css/mobile.css" media="(max-width: 939px)">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
 </head>
 
 <body>

@@ -16,7 +16,7 @@ include("cabecalho.php");
 			<ul>
 				<li>
 					<a href="#">Blusas e Camisas</a>
-					<ul>
+					<ul id="teste">
 						<li><a href="#">Manga curta</a></li>
 						<li><a href="#">Manga comprida</a></li>
 						<li><a href="#">Camisa social</a></li>
@@ -36,7 +36,6 @@ include("cabecalho.php");
 	<img src="img/destaque-home.png" alt="Promoção: Big City Night">
 </div><!-- fim .container .destaque -->
 <div class="container paineis">
-	<!-- os paineis de novidades e mais vendidos entrarão aqui dentro -->
 	<section class="painel novidades">
 		<h2>Novidades</h2>
 		<ol>
@@ -89,7 +88,32 @@ include("cabecalho.php");
 					</figure>
 				</a>
 			</li>
+			<li>
+				<a href="produto.html">
+					<figure>
+						<img src="img/produtos/miniatura4.png" alt="Produto 4">
+						<figcaption>Fuzz Cardigan por R$ 129,90</figcaption>
+					</figure>
+				</a>
+			</li>
+			<li>
+				<a href="produto.html">
+					<figure>
+						<img src="img/produtos/miniatura5.png" alt="Produto 5">
+						<figcaption>Fuzz Cardigan por R$ 129,90</figcaption>
+					</figure>
+				</a>
+			</li>
+			<li>
+				<a href="produto.html">
+					<figure>
+						<img src="img/produtos/miniatura6.png" alt="Produto 6">
+						<figcaption>Fuzz Cardigan por R$ 129,90</figcaption>
+					</figure>
+				</a>
+			</li>
 		</ol>
+		<button type="button">Mostrar mais</button>
 	</section>
 	<section class="painel mais-vendidos">
 		<h2>Mais vendidos</h2>
@@ -143,8 +167,35 @@ include("cabecalho.php");
 					</figure>
 				</a>
 			</li>
+			<li>
+				<a href="produto.html">
+					<figure>
+						<img src="img/produtos/miniatura10.png" alt="Produto 4">
+						<figcaption>Fuzz Cardigan por R$ 129,90</figcaption>
+					</figure>
+				</a>
+			</li>
+			<li>
+				<a href="produto.html">
+					<figure>
+						<img src="img/produtos/miniatura11.png" alt="Produto 5">
+						<figcaption>Fuzz Cardigan por R$ 129,90</figcaption>
+					</figure>
+				</a>
+			</li>
+			<li>
+				<a href="produto.html">
+					<figure>
+						<img src="img/produtos/miniatura12.png" alt="Produto 6">
+						<figcaption>Fuzz Cardigan por R$ 129,90</figcaption>
+					</figure>
+				</a>
+			</li>
 		</ol>
+		<button type="button">Mostrar mais</button>
 	</section>
 </div>
 <script src="js/banner.js"></script>
+<script src="js/home.js"></script>
+
 <?php include("rodape.php"); ?>
