@@ -29,6 +29,18 @@ include("cabecalho.php");
 			dúvidas. Conheça também nossa <a href="#historia">história</a> e
 			nossos <a href="#diferenciais">diferenciais</a>.
 		</p>
+		<div class="centrar">
+			<iframe
+				width="560"
+				height="315"
+				src="https://www.youtube.com/embed/Tb06abHE4hY?si=J93c91fvy54XxRKk"
+				title="YouTube video player"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				referrerpolicy="strict-origin-when-cross-origin"
+				allowfullscreen>
+			</iframe>
+		</div>
 	</section>
 	<section>
 		<h2 id="historia">História</h2>
@@ -66,6 +78,17 @@ include("cabecalho.php");
 			além de presidentes da União Européia, Ásia e o secretário-geral da
 			ONU.
 		</p>
+		<div class="centrar">
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58692.98225059368!2d-50.00953861341322!3d-23.158832443842055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c026544d26f253%3A0xc66dac11dad56f73!2sJacarezinho%2C%20PR%2C%2086400-000%2C%20Brasil!5e0!3m2!1spt-PT!2spt!4v1730802270862!5m2!1spt-PT!2spt"
+				width="940"
+				height="450"
+				style="border:0;"
+				allowfullscreen=""
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade">
+			</iframe>
+		</div>
 	</section>
 	<section>
 		<h2 id="diferenciais">Diferenciais</h2>

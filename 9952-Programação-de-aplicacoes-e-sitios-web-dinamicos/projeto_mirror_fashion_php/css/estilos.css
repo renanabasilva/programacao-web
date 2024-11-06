@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 body {
     color: #333;
-    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    font-family: 'PT Sans', sans-serif;
 }
 
 .container {
@@ -126,6 +128,7 @@ header {
 }
 
 .painel h2 {
+    font-family: 'Bad Script', sans-serif;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 24px;
