@@ -1,3 +1,9 @@
+<?php
+$con = mysqli_connect("localhost", "root", "", "mirrorfashion");
+$dados = mysqli_query($con, "SELECT * FROM produtos WHERE id = $_POST[id]");
+$produto = mysqli_fetch_array($dados);
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -64,9 +70,9 @@
             <img src="img/produtos/foto<?= $_POST['id'] ?>-<?= $_POST['cor'] ?>.png" class="img-thumbnail img-responsive hidden-xs">
             <dl>
               <dt>Produto</dt>
-              <dd><?= $_POST['nome'] ?></dd>
+              <dd><?= $produto['nome'] ?></dd>
               <dt>Preço</dt>
-              <dd id="preco"><?= $_POST['preco'] ?></dd>
+              <dd id="preco"><?= $produto['preco'] ?></dd>
               <dt>Cor</dt>
               <dd><?= $_POST['cor'] ?></dd>
               <dt>Tamanho</dt>
@@ -74,12 +80,12 @@
             </dl>
             <div class="form-group">
               <label for="qt">Quantidade</label>
-              <input type="number" id="qt" class="form-control" min="0" max="99" value="1">
+              <input type="number" id="qt" class="form-control" min="1" max="99" value="1">
             </div>
             <div class="form-group">
               <label for="total">Total</label>
               <output for="qt valor" id="total" class="form-control">
-                <?= $_POST['preco'] ?>
+                <?= $produto['preco'] ?>
               </output>
             </div>
           </div> <!-- fim .panel-body -->
