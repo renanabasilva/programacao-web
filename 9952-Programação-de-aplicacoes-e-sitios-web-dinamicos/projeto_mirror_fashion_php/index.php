@@ -1,7 +1,7 @@
 <?php
 $cabecalho_title = "Mirror Fashion";
 include("cabecalho.php");
-$con = mysqli_connect("localhost", "root", "", "mirrorfashion");
+$con = mysqli_connect("fdb1027.runhosting.com", "4548681_mirrorfashion", "bY1Z@m3H3QWqI[q.", "4548681_mirrorfashion");
 ?>
 <div class="container destaque">
 	<section class="busca">

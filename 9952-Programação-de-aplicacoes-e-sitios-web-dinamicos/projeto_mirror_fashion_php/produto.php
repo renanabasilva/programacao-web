@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost", "root", "", "mirrorfashion");
+$con = mysqli_connect("fdb1027.runhosting.com", "4548681_mirrorfashion", "bY1Z@m3H3QWqI[q.", "4548681_mirrorfashion");
 $dados = mysqli_query($con, "SELECT * FROM produtos WHERE id = $_GET[id]");
 $produto = mysqli_fetch_array($dados);
 $cabecalho_title = $produto['nome'] . " - Mirror Fashion";

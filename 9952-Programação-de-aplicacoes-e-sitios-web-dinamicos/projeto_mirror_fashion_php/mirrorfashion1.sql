@@ -1,48 +1,43 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.6
--- http://www.phpmyadmin.net
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Sep 26, 2013 at 07:17 AM
--- Server version: 5.5.14
--- PHP Version: 5.5.0
+-- Host: 127.0.0.1
+-- Tempo de geração: 07/11/2024 às 11:27
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mirrorfashion`
+-- Banco de dados: `mirrorfashion`
 --
-
-
-USE 4548681_mirrorfashion;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produtos`
+-- Estrutura para tabela `produtos`
 --
 
-DROP TABLE IF EXISTS `produtos`;
-
-CREATE TABLE IF NOT EXISTS `produtos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `preco` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `descricao` text COLLATE utf8_unicode_ci,
+CREATE TABLE `produtos` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  `preco` varchar(45) DEFAULT NULL,
+  `descricao` text DEFAULT NULL,
   `data` date DEFAULT NULL,
-  `vendas` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=18 ;
+  `vendas` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `produtos`
+-- Despejando dados para a tabela `produtos`
 --
 
 INSERT INTO `produtos` (`id`, `nome`, `preco`, `descricao`, `data`, `vendas`) VALUES
@@ -61,6 +56,27 @@ INSERT INTO `produtos` (`id`, `nome`, `preco`, `descricao`, `data`, `vendas`) VA
 (13, 'Blusa Lez a Lez Feel Sft I', 'R$ 107,00', 'Blusa manga longa, decote redondo com fechamento em spikes dando estilo Rocker a pe&ccedil;a! Possui detalhe de bolso lateral na altura do peito e manga 3/4.', '2013-09-03', 42),
 (14, 'Camisa Lez a Lez Tec Ray Sixty III', 'R$ 269,00', 'Camisa manga longa, gola esporte com fechamento aboto&aacute;vel em spikes. Possui costas com recortes modelagem nadador e barra mullet.', '2013-09-04', 312),
 (15, 'Vestido Thelure Alu', 'R$ 598,00', 'Aspecto rom&acirc;ntico, al&ccedil;as finas duplas e mangas com babados que caem nos ombros. Possui bot&otilde;es forrados na parte frontal, el&aacute;stico drapeado na altura do quadril. De perfeito caimento, ideal para usar em passeios informais.', '2013-09-11', 98);
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices de tabela `produtos`
+--
+ALTER TABLE `produtos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT para tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `produtos`
+--
+ALTER TABLE `produtos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
